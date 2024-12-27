@@ -28,7 +28,7 @@ function closeDrawer() {
     overlay.classList.remove('active');
 }
 
-// Load The Table
+// Load The Table1
 document.addEventListener("DOMContentLoaded", () => {
     const tableBody = document.getElementById("table-body");
 
@@ -36,20 +36,46 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("data1.json")
         .then(response => response.json())
         .then(data => {
-            data.forEach(row => {
+            data.slice(0,13).forEach(row => {
                 const tr = document.createElement("tr");
                 tr.innerHTML = `
-                    <td style="font-size:14px; margin:0; padding:0" class="fw-bold">${row.ID_NO}</td>
-                    <td style="font-size:14px; margin:0; padding:0" class="fw-bold">${row.AGENT}</td>
+                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold">${row.ID_NO}</td>
+                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold">${row.AGENT}</td>
                     <td class=""><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></td>
-                    <td style="font-size:14px; margin:0; padding:0" class="fw-bold text-danger">${row.PHONE_NUMBER}</td>
-                    <td style="font-size:14px; margin:0; padding:0" class="fw-bold text-danger">${row.COMPLAIN}</td>
+                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold text-danger">${row.PHONE_NUMBER}</td>
+                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold text-danger">${row.COMPLAIN}</td>
                 `;
                 tableBody.appendChild(tr);
             });
         })
         .catch(error => console.error("Error fetching data:", error));
 });
+
+// Load Table 2:
+document.addEventListener("DOMContentLoaded", () => {
+    const tableBody = document.getElementById("table-body2");
+
+    // Mock fetch call to simulate data retrieval
+    fetch("data1.json")
+        .then(response => response.json())
+        .then(data => {
+            data.slice(13,23).forEach(row => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold">${row.ID_NO}</td>
+                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold">${row.AGENT}</td>
+                    <td class=""><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></td>
+                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold text-danger">${row.PHONE_NUMBER}</td>
+                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold text-danger">${row.COMPLAIN}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        })
+        .catch(error => console.error("Error fetching data:", error));
+});
+
+// Load The Table2:
+
 
 // Dynamic Search Result:
 document.addEventListener("DOMContentLoaded", () => {

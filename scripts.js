@@ -70,11 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
             data.slice(13,23).forEach(row => {
                 const tr = document.createElement("tr");
                 tr.innerHTML = `
-                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold">${row.ID_NO}</td>
-                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold">${row.AGENT}</td>
-                    <td class=""><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></td>
-                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold text-danger">${row.PHONE_NUMBER}</td>
-                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold text-danger">${row.COMPLAIN}</td>
+                    <td class="" style="font-size:15px; margin:0; padding:0; border-left: 1px solid black; border-right: 1px solid black;" class="fw-bold">${row.ID_NO}</td>
+                    <td style="font-size:15px; margin:0; padding:0; border-right: 1px solid black;" class="fw-bold">${row.AGENT}</td>
+                    <td style="border-right: 1px solid black;" class=""><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></td>
+                    <td style="font-size:15px; margin:0; padding:0; border-right: 1px solid black;" class="fw-bold text-danger">${row.PHONE_NUMBER}</td>
+                    <td style="font-size:15px; margin:0; padding:0; border-right: 1px solid black;" class="fw-bold text-danger">${row.COMPLAIN}</td>
                 `;
                 tableBody.appendChild(tr);
             });
@@ -87,14 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Dynamic Search Result:
 document.addEventListener("DOMContentLoaded", () => {
-    const agentData = [
-        {
-            "ID_NO": "255",
-            "AGENT_LABEL": "উনার মাস্টার এজেন্ট আইডি",
-            "PHONE_LABEL": "উনার হোয়াটসঅ্যাপ নাম্বার",
-            "PHONE_NUMBER": "+60104280230"
-        },
-    ];
 
     const form = document.getElementById("search-form");
     const resultContainer = document.getElementById("result-container");

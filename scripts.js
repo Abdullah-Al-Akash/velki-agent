@@ -18,14 +18,23 @@ const openButton = document.getElementById('openSidebar');
 const closeButton = document.getElementById('closeSidebar');
 
 // Open sidebar
+// Open sidebar
 openButton.addEventListener('click', () => {
-  sidebar.classList.add('active');
-});
-
-// Close sidebar
-closeButton.addEventListener('click', () => {
-  sidebar.classList.remove('active');
-});
+    sidebar.classList.add('active');
+    overlay.classList.add('active'); // Show overlay when sidebar is open
+  });
+  
+  // Close sidebar using close button
+  closeButton.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active'); // Hide overlay
+  });
+  
+  // Close sidebar when clicking outside (on the overlay)
+  overlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+  });
 
 // Load The Table1
 document.addEventListener("DOMContentLoaded", () => {

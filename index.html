@@ -118,21 +118,35 @@
 <body>
 
     <div class="navbar border-bottom border-danger border-3">
-        <div class="hamburger px-3 fw-bold border-end" onclick="openDrawer(event)">☰</div>
+        <div id="openSidebar" class="hamburger px-3 fw-bold border-end" onclick="openDrawer(event)">☰</div>
         <div class="logo"><img class="img-fluid" src="./img/logo.jpg" alt=""></div>
         <h6 href="https://wa.me/qr/V45DLDATSHMNC1" class="whatsapp text-danger pe-2" target="_blank">কাস্টমার সাপোর্ট</h6>
     </div>
 
-    <div class="sidebar " id="sidebar">
-        <a class="" href="#">প্রধান মেনু</a>
-        <a class="" href="#">হোম পেইজ</a>
-        <a class="" href="#">সাধারণ প্রশ্ন উত্তর</a>
-        <a class="" href="#">এজেন্ট লিস্ট</a>
-        <a class="text-danger" href="#">মাস্টার এজেন্ট লিস্ট</a>
-        <a class="" href="#">সুপার এজেন্ট লিস্ট</a>
-        <a class="" href="#">সাব এডমিন লিস্ট</a>
-        <a class="" href="#">কাস্টমার সার্ভিস লিস্ট</a>
-    </div>
+    <div id="sidebar" class="sidebar">
+        <div class="d-flex align-items-center">
+            <h6 class="mt-2 fw-bold">SLIDEBAR</h6>
+            <button id="closeSidebar" class="close-btn ms-auto fw-bold pe-2 border-start-2">x</button>
+        </div>
+        <ul class="menu">
+          <li>প্রধান মেনু</li>
+          <li>ভেলকি অটো ডিপোজিট এজেন্ট</li>
+          <li>হোম পেইজ</li>
+          <li>সাধারণ প্রশ্ন উত্তর</li>
+          <li>ভেলকি প্রস্তাবিত লিঙ্ক</li>
+          <li>ভেলকিতে একাউন্ট খুলবেন?</li>
+          <li>এজেন্ট এর নতুন নাম্বার</li>
+          <li>ফোন নাম্বার সার্চ করুন</li>
+          <li class="highlight">এজেন্ট লিঙ্ক</li>
+          <li>এজেন্ট কে ভেরিফাই করুন</li>
+          <li>মাস্টার এজেন্ট লিঙ্ক</li>
+          <li class="highlight2">সুপার এজেন্ট লিঙ্ক</li>
+          <li>সাব এডমিন লিঙ্ক</li>
+          <li>সাইট এডমিন লিঙ্ক</li>
+          <li>কাস্টমার সার্ভিস লিঙ্ক</li>
+          <li>ভেলকি</li>
+        </ul>
+      </div>
     <div class="overlay" id="overlay" onclick="closeDrawer()"></div>
     <h4 class="text-center my-4 mx-4 fw-bold">এজেন্ট এর আইডি নাম্বার দিয়ে খুজুনঃ</h4>
     <div class="form-container mt-4">

@@ -13,20 +13,19 @@ async function fetchData() {
 fetchData();
 
 console.log(allData);
-function openDrawer(event) {
-    event.stopPropagation();
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-    sidebar.classList.add('active');
-    overlay.classList.add('active');
-}
+const sidebar = document.getElementById('sidebar');
+const openButton = document.getElementById('openSidebar');
+const closeButton = document.getElementById('closeSidebar');
 
-function closeDrawer() {
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-    sidebar.classList.remove('active');
-    overlay.classList.remove('active');
-}
+// Open sidebar
+openButton.addEventListener('click', () => {
+  sidebar.classList.add('active');
+});
+
+// Close sidebar
+closeButton.addEventListener('click', () => {
+  sidebar.classList.remove('active');
+});
 
 // Load The Table1
 document.addEventListener("DOMContentLoaded", () => {

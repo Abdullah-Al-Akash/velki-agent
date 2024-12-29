@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velki Agent</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!-- Google Fonts -->
-  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
@@ -46,7 +49,7 @@
     }
 
     .form-container button {
-        width: 100%;
+        font-weight: 400;
         padding: 10px;
         background-color: #28a745;
         color: white;
@@ -75,23 +78,23 @@
     }
 
     .data-table thead tr {
-        background: #f1f1f1;
+        background: rgb(255, 246, 243);
         color: #333;
     }
 
     .data-table th, 
-    .data-table td {
+    .data-table td{
         border: 1px solid #ddd;
         padding: 10px;
         text-align: center;
+        /* text-decoration: none; */
     }
-
     .data-table tbody tr:nth-child(odd) {
-        background: #f9f9f9;
+        background: rgb(239, 239, 239);
     }
 
     .data-table tbody tr:nth-child(even) {
-        background: #fff;
+        background: rgb(255, 246, 243);
     }
 
     .data-table td:nth-child(3) img {
@@ -126,7 +129,7 @@
     <div class="navbar border-bottom border-danger border-3">
         <div id="openSidebar" class="hamburger px-3 fw-bold border-end" onclick="openDrawer(event)">☰</div>
         <div class="logo"><img class="img-fluid" src="./img/logo.jpg" alt=""></div>
-        <h6 href="https://wa.me/qr/V45DLDATSHMNC1" class="whatsapp text-danger pe-2" target="_blank">কাস্টমার সার্ভিস</h6>
+        <h6 class="whatsapp text-danger pe-2" target="_blank"><a style="text-decoration:none;" class="text-danger" href="https://wa.me/qr/V45DLDATSHMNC1" target="_blank">কাস্টমার সার্ভিস</a></h6>
     </div>
 
     <div id="sidebar" class="sidebar">
@@ -165,7 +168,7 @@
             </select>
             <label for="agent-id">Agent ID:</label>
             <input type="text" id="agent-id" placeholder="Enter Agent ID">
-            <button type="submit">Submit</button>
+            <button type="">Submit</button>
         </form>
     </div>
     <!-- Dynamic Content for search -->
@@ -180,13 +183,13 @@
         <div class="mx-4" style="display: flex; justify-content: center; align-items: center; margin: 50px 0; text-align: center;">
             <div style="position: relative; max-width: 100%; text-align: center;">
             <img style="width: 100%; " src="https://i.ibb.co/R6mTwW0/Whats-App-Image-2024-12-09-at-20-38-41-475947ee.jpg" alt="Image">
-            <button class="border-1 px-2" style="position: absolute; top: 0; left: 0; cursor: pointer; font-size: 12px;">AGENT</button>
+            <button class="border-1 px-2 fw-normal" style="position: absolute; top: 0; left: 0; cursor: pointer; font-size: 12px;">AGENT</button>
             </div>
         </div>
         <div class=" mx-4 border-start border-5">
             <h5 class="fw-bold ms-2 lh-lg">এজেন্ট দের সাথে লেনদেন এর আগে ভেল্কির নিয়ম গুলো জেনে নিন!!</h5>
             <h6 class="fw-bolder ms-2 lh-lg">**প্রতারনার হাত থেকে বাচতে সবার আগে ভিজিট করুন ভেল্কি সাইটঃ VELKI.COM  **হোয়াটসঅ্যাপ ব্যাতিত অন্য কোন এপ এর মাধ্যমে যোগাযোগ বা লেনদেন করা যাবে না এবং করলে তা গ্রহনযোগ্য হবে না। **এজেন্ট পাসোয়ার্ড পরিবর্তন করে দিলে - আপনি একাউন্টে ঢুকে আবার পাসোয়ার্ড পরিবর্তন করে নিবেন। এজেন্ট যাতে কোন ভাবেই আপনার পাসোয়ার্ড না জানে। আপনার পাসোয়ার্ড আপনি কাউকেই দিবেন না - সে যেই হউক না কেন। **সকাল ৯ঃ৪৫ এর আগে এবং রাত ৯ঃ৪৫ এর পরে কোন ইউজার যদি এজেন্ট কে টাকা পাঠায় – অই টাকার দায়ভার ভেল্কি নিবে না। **প্রতিবার এজেন্ট এর কাছ থেকে পয়েন্ট নেবার আগে – এজেন্ট এর কাছে লেনদেন এর তথ্য জেনে নিতে হবে। যেহেতু এজেন্ট এক এক সময় এক ভাবে লেনদেন করে সেহেতু এই তথ্য জানা জরুরী। **এজেন্ট এর বিরুদ্ধে কোন অভিযোগ থাকলে এজেন্ট এর নামের শেষে অভিযোগ বাটন এ ক্লিক করলে যে হোয়াটসঅ্যাপ নাম্বার আসবে - তাকে অভিযোগ করতে হবে।</h6>
-            <h3 class="text-center mt-2">VELKI MASTER AGENT LIST</h3>
+            <h3 class="text-center mt-2 fw-bold">VELKI MASTER AGENT LIST</h3>
         </div>
     </div>
     <!-- Table Main Content -->
@@ -198,11 +201,11 @@
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th class="">ID NO</th>
-                        <th>AGENT</th>
-                        <th>APP</th>
-                        <th>PHONE NUMBER</th>
-                        <th>COMPLAIN</th>
+                        <th style="border-right: 1px solid black;border-left: 1px solid black;" class="">ID NO</th>
+                        <th style="border-right: 1px solid black;">AGENT</th>
+                        <th style="border-right: 1px solid black;">APP</th>
+                        <th style="border-right: 1px solid black;">PHONE NUMBER</th>
+                        <th style="border-right: 1px solid black;">COMPLAIN</th>
                     </tr>
                 </thead>
                 <tbody id="table-body">
@@ -229,6 +232,82 @@
                     </tr>
                 </thead>
                 <tbody id="table-body2">
+                    <!-- Dynamic rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+     </div>
+     <!-- Table2 for Super Admin -->
+     <div class="my-4">
+        <div>
+            <h5 class="text-center fw-bold lh-base mx-2 ps-1">সাব এডমিন 10 এর অধীনে সুপার এজেন্ট 10 এর অধীনে সর্বমোট মাস্টার এজেন্ট আছে 14 জন</h5>
+        </div>
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="border-right: 1px solid black;border-left: 1px solid black;" class="">ID NO</th>
+                        <th style="border-right: 1px solid black;">AGENT</th>
+                        <th style="border-right: 1px solid black;">APP</th>
+                        <th style="border-right: 1px solid black;">PHONE NUMBER</th>
+                        <th style="border-right: 1px solid black;">COMPLAIN</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body3">
+                    <!-- Dynamic rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+     </div>
+     <!-- Table2 for Super Admin -->
+     <div class="my-4">
+        <div>
+            <h5 class="text-center fw-bold lh-base mx-2 ps-1">সাব এডমিন 10 এর অধীনে সুপার এজেন্ট 10 এর অধীনে সর্বমোট মাস্টার এজেন্ট আছে 14 জন</h5>
+        </div>
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="border-right: 1px solid black;border-left: 1px solid black;" class="">ID NO</th>
+                        <th style="border-right: 1px solid black;">AGENT</th>
+                        <th style="border-right: 1px solid black;">APP</th>
+                        <th style="border-right: 1px solid black;">PHONE NUMBER</th>
+                        <th style="border-right: 1px solid black;">COMPLAIN</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body5">
+                    <!-- Dynamic rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="border-right: 1px solid black;border-left: 1px solid black;" class="">ID NO</th>
+                        <th style="border-right: 1px solid black;">AGENT</th>
+                        <th style="border-right: 1px solid black;">APP</th>
+                        <th style="border-right: 1px solid black;">PHONE NUMBER</th>
+                        <th style="border-right: 1px solid black;">COMPLAIN</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body4">
+                    <!-- Dynamic rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="border-right: 1px solid black;border-left: 1px solid black;" class="">ID NO</th>
+                        <th style="border-right: 1px solid black;">AGENT</th>
+                        <th style="border-right: 1px solid black;">APP</th>
+                        <th style="border-right: 1px solid black;">PHONE NUMBER</th>
+                        <th style="border-right: 1px solid black;">COMPLAIN</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body6">
                     <!-- Dynamic rows will be inserted here -->
                 </tbody>
             </table>

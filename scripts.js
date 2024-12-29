@@ -47,11 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
             data.slice(0,13).forEach(row => {
                 const tr = document.createElement("tr");
                 tr.innerHTML = `
-                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold">${row.ID_NO}</td>
-                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold">${row.AGENT}</td>
-                    <td class=""><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></td>
-                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold text-danger">${row.PHONE_NUMBER}</td>
-                    <td style="font-size:15px; margin:0; padding:0" class="fw-bold text-danger">${row.COMPLAIN}</td>
+                    <td style="font-size:15px; margin:0; padding:0; border-left: 1px solid black; border-right: 1px solid black;" class="fw-bold">${row.ID_NO}</td>
+                    <td style="font-size:15px; margin:0; padding:0; border-left: 1px solid black; border-right: 1px solid black;" class="fw-bold">${row.AGENT}</td>
+                    <td style="border-right: 1px solid black;" class=""><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a></td>
+                    <td style="font-size:15px; margin:0; padding:0; border-left: 1px solid black; border-right: 1px solid black;" class="fw-bold text-danger"><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank">${row.PHONE_NUMBER}</a></td>
+                    <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger">
+                    <a style="text-decoration:none;" class="text-danger" href="https://wa.me/qr/V45DLDATSHMNC1" target="_blank">${row.COMPLAIN}</a>
+                    </td>
                 `;
                 tableBody.appendChild(tr);
             });
@@ -67,14 +69,120 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("data1.json")
         .then(response => response.json())
         .then(data => {
-            data.slice(13,23).forEach(row => {
+            data.forEach(row => {
                 const tr = document.createElement("tr");
                 tr.innerHTML = `
-                    <td class="" style="font-size:15px; margin:0; padding:0; border-left: 1px solid black; border-right: 1px solid black;" class="fw-bold">${row.ID_NO}</td>
+                   <td style="font-size:15px; margin:0; padding:0; border-left: 1px solid black; border-right: 1px solid black;" class="fw-bold">${row.ID_NO}</td>
                     <td style="font-size:15px; margin:0; padding:0; border-right: 1px solid black;" class="fw-bold">${row.AGENT}</td>
-                    <td style="border-right: 1px solid black;" class=""><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></td>
-                    <td style="font-size:15px; margin:0; padding:0; border-right: 1px solid black;" class="fw-bold text-danger">${row.PHONE_NUMBER}</td>
-                    <td style="font-size:15px; margin:0; padding:0; border-right: 1px solid black;" class="fw-bold text-danger">${row.COMPLAIN}</td>
+                    <td style="border-right: 1px solid black;" class=""><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a></td>
+                    
+                    <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger"><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank">${row.PHONE_NUMBER}</a></td>
+                    <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger">
+                    <a style="text-decoration:none;" class="text-danger" href="https://wa.me/qr/V45DLDATSHMNC1" target="_blank">${row.COMPLAIN}</a>
+                    </td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        })
+        .catch(error => console.error("Error fetching data:", error));
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const tableBody = document.getElementById("table-body3");
+
+    // Mock fetch call to simulate data retrieval
+    fetch("data1.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            data.forEach(row => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td style="font-size:15px; margin:0; padding:0; border-left: 1px solid black; border-right: 1px solid black;" class="fw-bold">${row.ID_NO}</td>
+                    <td style="font-size:15px; margin:0; padding:0; border-right: 1px solid black;" class="fw-bold">${row.AGENT}</td>
+                    <td style="border-right: 1px solid black;" class=""><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a></td>
+                    
+                    <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger"><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank">${row.PHONE_NUMBER}</a></td>
+                    <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger">
+                    <a style="text-decoration:none;" class="text-danger" href="https://wa.me/qr/V45DLDATSHMNC1" target="_blank">${row.COMPLAIN}</a>
+                    </td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        })
+        .catch(error => console.error("Error fetching data:", error));
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const tableBody = document.getElementById("table-body4");
+
+    // Mock fetch call to simulate data retrieval
+    fetch("data1.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            data.forEach(row => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td style="font-size:15px; margin:0; padding:0; border-left: 1px solid black; border-right: 1px solid black;" class="fw-bold">${row.ID_NO}</td>
+                    <td style="font-size:15px; margin:0; padding:0; border-right: 1px solid black;" class="fw-bold">${row.AGENT}</td>
+                    <td style="border-right: 1px solid black;" class=""><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a></td>
+                    
+                    <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger"><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank">${row.PHONE_NUMBER}</a></td>
+                    <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger">
+                    <a style="text-decoration:none;" class="text-danger" href="https://wa.me/qr/V45DLDATSHMNC1" target="_blank">${row.COMPLAIN}</a>
+                    
+                    </td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        })
+        .catch(error => console.error("Error fetching data:", error));
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const tableBody = document.getElementById("table-body5");
+
+    // Mock fetch call to simulate data retrieval
+    fetch("data1.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            data.forEach(row => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td style="font-size:15px; margin:0; padding:0; border-left: 1px solid black; border-right: 1px solid black;" class="fw-bold">${row.ID_NO}</td>
+                    <td style="font-size:15px; margin:0; padding:0; border-right: 1px solid black;" class="fw-bold">${row.AGENT}</td>
+                    <td style="border-right: 1px solid black;" class=""><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a></td>
+                    
+                    <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger"><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank">${row.PHONE_NUMBER}</a></td>
+                    <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger">
+                    <a style="text-decoration:none;" class="text-danger" href="https://wa.me/qr/V45DLDATSHMNC1" target="_blank">${row.COMPLAIN}</a>
+                    
+                    </td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        })
+        .catch(error => console.error("Error fetching data:", error));
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const tableBody = document.getElementById("table-body6");
+
+    // Mock fetch call to simulate data retrieval
+    fetch("data1.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            data.forEach(row => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td style="font-size:15px; margin:0; padding:0; border-left: 1px solid black; border-right: 1px solid black;" class="fw-bold">${row.ID_NO}</td>
+                    <td style="font-size:15px; margin:0; padding:0; border-right: 1px solid black;" class="fw-bold">${row.AGENT}</td>
+                    <td style="border-right: 1px solid black;" class=""><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a></td>
+                    
+                    <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger"><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank">${row.PHONE_NUMBER}</a></td>
+                    <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger">
+                    <a style="text-decoration:none;" class="text-danger" href="https://wa.me/qr/V45DLDATSHMNC1" target="_blank">${row.COMPLAIN}</a>
+                    
+                    </td>
                 `;
                 tableBody.appendChild(tr);
             });

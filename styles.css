@@ -192,11 +192,11 @@ body {
 /* Message Icon CSS */
 .message-button {
     position: fixed;
-    bottom: 130px; /* Distance from the bottom */
-    right: 20px; /* Distance from the right */
+    bottom: 10px; /* Distance from the bottom */
+    right: 10px; /* Distance from the right */
     width: 50px; /* Adjust the button size */
     height: 50px;
-    background-color: #28a745; /* Green color for the button */
+    background-color: purple; /* Green color for the button */
     border-radius: 50%; /* Makes the button circular */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
     display: flex;
@@ -216,7 +216,7 @@ body {
 .message-button img {
     width: 60%; /* Adjust icon size */
     height: auto;
-    filter: invert(100%); /* Makes white icons visible on a green background */
+     /* Makes white icons visible on a green background */
 }
 
 .message-button:hover {

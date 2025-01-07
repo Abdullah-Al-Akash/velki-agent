@@ -85,6 +85,110 @@ overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
 });
 
+// Dynamic Search By Complain:
+function dynamicSearch(id){
+  window.scrollTo({
+    top: 500,
+    behavior: 'smooth' // Smooth scrolling animation
+});
+  console.log(id);
+  console.log(allData);
+  const resultContainer = document.getElementById("result-container");
+  const dynamicText = document.getElementById("dynamic-text-container");
+    const result = allData?.find((agent) => agent.ID_NO == id);
+    console.log(result);
+
+    resultContainer.innerHTML = ""; // Clear previous results
+
+    if (result) {
+      dynamicText.innerHTML = `
+                <h4 class="lh-lg text-center text-danger fw-bold">লটারী! লটারী!! লটারী!!!!!...</h4>
+                <h4 class="lh-base text-center text-danger fw-bold">আপনি যদি ভেল্কির ইউজার হয়ে থাকেন তাহলে ফ্রীতে লটারী তে জয়েন করুন...</h4>
+                <h4 class="lh-base text-center fw-bold">উনি ভেল্কির একজন অনলাইন ${result.AGENT} এজেন্ট নাম্বার ${result.ID_NO} </h4>
+            `;
+      resultContainer.innerHTML = `
+                <table>
+                    <tr style="background: rgb(255, 246, 243);">
+                        <td class="text-center border-start">উনার ${result.AGENT} এজেন্ট আইডিঃ</td>
+                        <td class="text-center"><span class="text-danger">${result?.ID_NO}</span></td>
+                    </tr>
+                    <tr style="background: rgb(239, 239, 239);">
+                        <td class="text-center">উনার হোয়াটসঅ্যাপ নাম্বারঃ</td>
+                        <td class="text-center">
+                            <a target="_blank" class="text-decoration-none" href=${result.LINK}>
+                            <img width="250px" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"><span class="text-danger">${result.PHONE_NUMBER}</span>
+                            </a>
+                        </td>
+                        
+                    </tr>
+                </table>
+                <div class="mt-4">
+                    <h4 class="fw-bold py-2 text-center lh-base"> এই ভেল্কির অনলাইন মাষ্টার এজেন্ট এর
+                        আপলাইনের তথ্যঃ
+                    </h4>
+                    <h6 class="fw-bold pb-4 text-center lh-base">উপরের অনলাইন মাষ্টার এজেন্ট এর বিরুদ্ধে অভিযোগ করতে হলে নিচের যে কোন নাম্বার এ হোয়াটসঅ্যাপ এ মেসেজ দিলেই হবে
+                    </h6>
+                </div>
+                <div class="mt-4">
+                    <table>
+                        <tr style="background: rgb(239, 239, 239);">
+                            <td class="text-center">উনার সুপার এজেন্ট এর
+                            এজেন্ট আইডিঃ
+                            </td>
+                            <td class="text-center"><span class="text-danger">13</span></td>
+                        </tr>
+                        <tr style="background: rgb(255, 246, 243);">
+                            <td class="text-center">উনার সুপার এজেন্ট এর
+                            হোয়াটসঅ্যাপ নাম্বারঃ
+                            </td>
+                            <td class="text-center">
+                            <a target="_blank" class="text-decoration-none" href="https://wa.me/12892774790">
+                            <img width="250px" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"><span class="text-danger">+85581996913</span>
+                            </a>
+                             </td>
+                        </tr>
+                        <tr style="background: rgb(239, 239, 239);">
+                            <td class="text-center">উনার সাব এডমিন এর এডমিন
+আইডিঃ
+
+                            </td>
+                            <td class="text-center"><span class="text-danger">5</span></td>
+                        </tr>
+                        <tr style="background: rgb(255, 246, 243);">
+                            <td class="text-center">উনার সাব এডমিন এর
+হোয়াটসঅ্যাপ নাম্বারঃ</td>
+                            <td class="text-center">
+                             <a target="_blank" class="text-decoration-none" href="https://wa.me/message/NNRKXQRHXS6GI1">
+                            <img width="250px" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"><span class="text-danger">+85581996913</span>
+                            </a>
+                            </td>
+                        </tr>
+                        <tr style="background: rgb(239, 239, 239);">
+                            <td class="text-center fw-bold">উনার এডমিন এর এডমিন
+আইডিঃ</td>
+                            <td class="text-center fw-bold">
+                                <span class="text-danger fw-bold">Akash Malik
+</span>
+                            </td>
+                        </tr>
+                        <tr style="background: rgb(255, 246, 243);">
+                            <td class="text-center">উনার এডমিন এর
+হোয়াটসঅ্যাপ নাম্বারঃ
+</td>
+                            <td class="text-center">
+                             <a target="_blank" class="text-decoration-none" href="https://wa.me/message/YR77YJ6KBHF5M1">
+                            <img width="250px" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"><span class="text-danger">+85581996913</span>
+                            </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            `;
+    } else {
+      resultContainer.innerHTML = `<div class="no-content">No content found</div>`;
+      dynamicText.innerHTML = "";
+    }
+}
 // Load The Table1
 document.addEventListener("DOMContentLoaded", () => {
   const tableBody = document.getElementById("table-body");
@@ -100,9 +204,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td style="border-right: 1px solid black;" class=""><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a></td>
                     <td style="font-size:15px; margin:0; padding:0; border-left: 1px solid black; border-right: 1px solid black;" class="fw-bold text-danger"><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank">${row.PHONE_NUMBER}</a></td>
                     <td style="font-size:15px; border-right: 1px solid black;" class="fw-bold">
-    <a class="text-danger fw-bold"
-       style="text-decoration:none;" 
-       href="https://wa.me/qr/V45DLDATSHMNC1" 
+    <a onClick={dynamicSearch(${row.ID_NO})} class="text-danger fw-bold cursor-pointer"
+       style="text-decoration:none;"  
        target="_blank" 
        rel="noopener noreferrer">
        ${row.COMPLAIN}
@@ -132,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger"><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank">${row.PHONE_NUMBER}</a></td>
                     <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger">
-                    <a style="text-decoration:none;" class="text-danger" href="https://wa.me/qr/V45DLDATSHMNC1" target="_blank">${row.COMPLAIN}</a>
+                    <a onClick={dynamicSearch(${row.ID_NO})} style="text-decoration:none;" class="text-danger" target="_blank">${row.COMPLAIN}</a>
                     </td>
                 `;
         tableBody.appendChild(tr);
@@ -156,7 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger"><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank">${row.PHONE_NUMBER}</a></td>
                     <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger">
-                    <a style="text-decoration:none;" class="text-danger" href="https://wa.me/qr/V45DLDATSHMNC1" target="_blank">${row.COMPLAIN}</a>
+                    <a onClick={dynamicSearch(${row.ID_NO})} style="text-decoration:none;" class="text-danger" target="_blank">${row.COMPLAIN}</a>
                     </td>
                 `;
         tableBody.appendChild(tr);
@@ -166,7 +269,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 document.addEventListener("DOMContentLoaded", () => {
   const tableBody = document.getElementById("table-body4");
-
   // Mock fetch call to simulate data retrieval
   fetch("data1.json")
     .then((response) => response.json())
@@ -180,8 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger"><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank">${row.PHONE_NUMBER}</a></td>
                     <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger">
-                    <a style="text-decoration:none;" class="text-danger" href="https://wa.me/qr/V45DLDATSHMNC1" target="_blank">${row.COMPLAIN}</a>
-                    
+                    <a onClick={dynamicSearch(${row.ID_NO})} style="text-decoration:none;" class="text-danger"  target="_blank">${row.COMPLAIN}</a>
                     </td>
                 `;
         tableBody.appendChild(tr);
@@ -202,10 +303,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td style="font-size:15px; margin:0; padding:0; border-left: 1px solid black; border-right: 1px solid black;" class="fw-bold">${row.ID_NO}</td>
                     <td style="font-size:15px; margin:0; padding:0; border-right: 1px solid black;" class="fw-bold">${row.AGENT}</td>
                     <td style="border-right: 1px solid black;" class=""><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a></td>
-                    
                     <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger"><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank">${row.PHONE_NUMBER}</a></td>
                     <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger">
-                    <a style="text-decoration:none;" class="text-danger" href="https://wa.me/qr/V45DLDATSHMNC1" target="_blank">${row.COMPLAIN}</a>
+                    <a onClick={dynamicSearch(${row.ID_NO})} style="text-decoration:none;" class="text-danger" target="_blank">${row.COMPLAIN}</a>
                     
                     </td>
                 `;
@@ -230,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger"><a style="text-decoration:none;" class="text-danger" href=${row.LINK} target="_blank">${row.PHONE_NUMBER}</a></td>
                     <td style="font-size:15px; margin:0; padding:0;border-right: 1px solid black;" class="fw-bold text-danger">
-                    <a style="text-decoration:none;" class="text-danger" href="https://wa.me/qr/V45DLDATSHMNC1" target="_blank">${row.COMPLAIN}</a>
+                    <a  onClick={dynamicSearch(${row.ID_NO})} style="text-decoration:none;" class="text-danger" target="_blank">${row.COMPLAIN}</a>
                     
                     </td>
                 `;
@@ -249,7 +349,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", (event) => {
     event.preventDefault(); // Prevent default form submission
-
     const dynamicText = document.getElementById("dynamic-text-container");
     const agentId = document.getElementById("agent-id").value.trim();
     const result = allData?.find((agent) => agent.ID_NO === agentId);
@@ -263,20 +362,83 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h4 class="lh-base text-center fw-bold">উনি ভেল্কির একজন অনলাইন ${result.AGENT} এজেন্ট নাম্বার ${result.ID_NO} </h4>
             `;
       resultContainer.innerHTML = `
-                
                 <table>
-                    <tr>
-                        <td class="text-center">উনার ${result.AGENT} এজেন্ট আইডিঃ</td>
+                    <tr style="background: rgb(255, 246, 243);">
+                        <td class="text-center border-start">উনার ${result.AGENT} এজেন্ট আইডিঃ</td>
                         <td class="text-center"><span class="text-danger">${result?.ID_NO}</span></td>
                     </tr>
-                    <tr>
+                    <tr style="background: rgb(239, 239, 239);">
                         <td class="text-center">উনার হোয়াটসঅ্যাপ নাম্বারঃ</td>
                         <td class="text-center">
-                            <img width="250px" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                            <span class="text-danger fw-bold">${result.PHONE_NUMBER}</span>
+                            <a target="_blank" class="text-decoration-none" href=${result.LINK}>
+                            <img width="250px" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"><span class="text-danger">${result.PHONE_NUMBER}</span>
+                            </a>
                         </td>
+                        
                     </tr>
                 </table>
+                <div class="mt-4">
+                    <h4 class="fw-bold py-2 text-center lh-base"> এই ভেল্কির অনলাইন মাষ্টার এজেন্ট এর
+                        আপলাইনের তথ্যঃ
+                    </h4>
+                    <h6 class="fw-bold pb-4 text-center lh-base">উপরের অনলাইন মাষ্টার এজেন্ট এর বিরুদ্ধে অভিযোগ করতে হলে নিচের যে কোন নাম্বার এ হোয়াটসঅ্যাপ এ মেসেজ দিলেই হবে
+                    </h6>
+                </div>
+                <div class="mt-4">
+                    <table>
+                        <tr style="background: rgb(239, 239, 239);">
+                            <td class="text-center">উনার সুপার এজেন্ট এর
+                            এজেন্ট আইডিঃ
+                            </td>
+                            <td class="text-center"><span class="text-danger">13</span></td>
+                        </tr>
+                        <tr style="background: rgb(255, 246, 243);">
+                            <td class="text-center">উনার সুপার এজেন্ট এর
+                            হোয়াটসঅ্যাপ নাম্বারঃ
+                            </td>
+                            <td class="text-center">
+                            <a target="_blank" class="text-decoration-none" href="https://wa.me/12892774790">
+                            <img width="250px" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"><span class="text-danger">+85581996913</span>
+                            </a>
+                             </td>
+                        </tr>
+                        <tr style="background: rgb(239, 239, 239);">
+                            <td class="text-center">উনার সাব এডমিন এর এডমিন
+আইডিঃ
+
+                            </td>
+                            <td class="text-center"><span class="text-danger">5</span></td>
+                        </tr>
+                        <tr style="background: rgb(255, 246, 243);">
+                            <td class="text-center">উনার সাব এডমিন এর
+হোয়াটসঅ্যাপ নাম্বারঃ</td>
+                            <td class="text-center">
+                             <a target="_blank" class="text-decoration-none" href="https://wa.me/message/NNRKXQRHXS6GI1">
+                            <img width="250px" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"><span class="text-danger">+85581996913</span>
+                            </a>
+                            </td>
+                        </tr>
+                        <tr style="background: rgb(239, 239, 239);">
+                            <td class="text-center fw-bold">উনার এডমিন এর এডমিন
+আইডিঃ</td>
+                            <td class="text-center fw-bold">
+                                <span class="text-danger fw-bold">
+                                <a href="https://wa.me/qr/V45DLDATSHMNC1">Akash Malik</a>
+</span>
+                            </td>
+                        </tr>
+                        <tr style="background: rgb(255, 246, 243);">
+                            <td class="text-center">উনার এডমিন এর
+হোয়াটসঅ্যাপ নাম্বারঃ
+</td>
+                            <td class="text-center">
+                             <a target="_blank" class="text-decoration-none" href="https://wa.me/message/YR77YJ6KBHF5M1">
+                            <img width="250px" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"><span class="text-danger">+85581996913</span>
+                            </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             `;
     } else {
       resultContainer.innerHTML = `<div class="no-content">No content found</div>`;

@@ -423,7 +423,7 @@ document.addEventListener("DOMContentLoaded", () => {
 আইডিঃ</td>
                             <td class="text-center fw-bold">
                                 <span class="text-danger fw-bold">
-                                <a href="https://wa.me/qr/V45DLDATSHMNC1">Akash Malik</a>
+                                <a class="text-decoration-none text-danger" target="_blank" href="https://wa.me/qr/V45DLDATSHMNC1">Akash Malik</a>
 </span>
                             </td>
                         </tr>
@@ -432,8 +432,8 @@ document.addEventListener("DOMContentLoaded", () => {
 হোয়াটসঅ্যাপ নাম্বারঃ
 </td>
                             <td class="text-center">
-                             <a target="_blank" class="text-decoration-none" href="https://wa.me/message/YR77YJ6KBHF5M1">
-                            <img width="250px" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"><span class="text-danger">+85581996913</span>
+                             <a target="_blank" class="text-decoration-none" href="https://wa.me/qr/NHNL4YGEOGW6B1">
+                            <img width="250px" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"><span class="text-danger">+17152938262</span>
                             </a>
                             </td>
                         </tr>
